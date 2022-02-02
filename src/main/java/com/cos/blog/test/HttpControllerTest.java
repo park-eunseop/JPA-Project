@@ -10,9 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 // 사용자가 요청 -> 응답(html)    @Controller
 // 사용자가 요청 -> 응답(data)    @RestController
-
+// 프로젝트 >
 @RestController
 public class HttpControllerTest {
+	
+	private static final String TAG = "HttpControllerTest:";
+
+	@GetMapping("/http/lombok")
+	public String lombokTest() {
+		Member m = new Member();
+		Member m1 = new Member(1, "1", "2", "3");
+		m.setId(5000);
+		System.out.println(m.getId());
+		Member m2 = Member.builder().username("name").password("1234").build();
+		return null;
+	}
 	
 	//인터넷 브라우저 요청은 무조건 get요청만 할 수 있어
 	//http://localhost:8080/http/get
