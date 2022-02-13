@@ -34,7 +34,7 @@ public class User {
 	//오라클 - 시퀀스 , mysql  - auto-increment
 	private int id;  //시퀀스, auto-increment
 	
-	@Column(nullable = false,length = 30)  //not null
+	@Column(nullable = false,length = 30,unique = true)  //not null
 	private String username; //아이디
 	
 	@Column(nullable = false,length = 100)
